@@ -13,11 +13,10 @@
     const params = new URLSearchParams(window.location.search);
     const w = params.get('w');
     if (w) {
-      window.open('https://x.com/search?q=' + w + '&src=typed_query&f=live', '_blank');
       window.open('https://gmgn.ai/sol/address/' + w, '_blank');
       window.open('https://intel.arkm.com/explorer/address/' + w, '_blank');
       window.open('https://solscan.io/account/' + w + '#analytics', '_blank');
-      document.getElementById('msg').textContent = 'Tabs opened. You can close this page.';
+      window.location.href = 'https://x.com/search?q=' + w + '&src=typed_query&f=live';
     } else {
       document.getElementById('msg').textContent = 'No wallet address provided.';
     }

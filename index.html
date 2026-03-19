@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>sk1 links</title>
+  <style>
+    body { background: #111; color: #aaa; font-family: monospace; padding: 40px; text-align: center; }
+  </style>
+</head>
+<body>
+  <p id="msg">Opening tabs...</p>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const w = params.get('w');
+    if (w) {
+      window.open('https://x.com/search?q=' + w + '&src=typed_query&f=live', '_blank');
+      window.open('https://gmgn.ai/sol/address/' + w, '_blank');
+      window.open('https://intel.arkm.com/explorer/address/' + w, '_blank');
+      window.open('https://solscan.io/account/' + w + '#analytics', '_blank');
+      document.getElementById('msg').textContent = 'Tabs opened. You can close this page.';
+    } else {
+      document.getElementById('msg').textContent = 'No wallet address provided.';
+    }
+  </script>
+</body>
+</html>
